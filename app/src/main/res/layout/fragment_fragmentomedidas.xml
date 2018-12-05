@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragmentomedidas"
+    android:id="@+id/fragmentomedidas">
+
+    <!-- TODO: Update blank fragment layout -->
+    <Button
+        android:id="@+id/bot_cerrar"
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:gravity="center"
+        android:layout_gravity="right"
+        android:visibility="invisible"
+        android:text="X" />
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/piechar"
+        >
+
+    </com.github.mikephil.charting.charts.LineChart>
+
+
+
+
+    <ImageView
+        android:layout_height="0px"
+        android:layout_width="0px"
+        android:id="@+id/iv_fot"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TableRow
+
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/ColumnaAnio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="FECHA"
+                    android:textColor="#005500"
+                    android:textSize="14sp" />
+
+
+            </TableRow>
+
+            <TableRow
+
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+
+                <FrameLayout
+
+                    android:layout_width="fill_parent"
+                    android:layout_height="2px"
+                    android:layout_span="6"
+                    android:background="#FFFFFF"></FrameLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/Anio1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="PESO"
+                    android:textSize="14sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/Anio2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="IMC"
+                    android:textSize="14sp" />
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/Anio3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="IGC"
+                    android:textSize="14sp" />
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/Anio4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="CUELLO"
+                    android:textSize="14sp" />
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/Anio5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="ESPALDA"
+                    android:textSize="14sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/Anio6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="ANTEBRAZO"
+                    android:textSize="14sp" />
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/Anio7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="GLUTEO"
+                    android:textSize="14sp" />
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/Anio8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="BRAZO"
+                    android:textSize="14sp" />
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/Anio9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="ABDOMEN"
+                    android:textSize="14sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/Anio10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="PECHO"
+                    android:textSize="14sp" />
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/Anio11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="PIERNA"
+                    android:textSize="14sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/Anio12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="PANTORRILLA"
+                    android:textSize="14sp" />
+            </TableRow>
+        </TableLayout>
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <TableLayout
+                    android:id="@+id/myTableLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <TableRow
+                        android:id="@+id/Cabecera"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+
+
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/SeparadorCabecera"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+
+                        <FrameLayout
+                            android:id="@+id/LineaCabecera"
+                            android:layout_width="fill_parent"
+                            android:layout_height="2px"
+                            android:layout_span="6"
+                            android:background="#FFFFFF"></FrameLayout>
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/Fila1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+
+
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/Fila2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+
+
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/Fila3"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+
+
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/Fila4"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+
+
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/Fila5"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+
+
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/Fila6"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+
+
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/Fila7"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+
+
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/Fila8"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+
+
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/Fila9"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+
+
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/Fila10"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+
+
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/Fila11"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+
+
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/Fila12"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+
+
+                    </TableRow>
+
+                </TableLayout>
+
+
+            </HorizontalScrollView>
+
+
+        </ScrollView>
+
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Inicio_Activity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_gravity="center" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:textSize="18dp"
+        android:text="INGRESE CEDULA:"
+        android:gravity="center" />
+
+    <EditText
+        android:id="@+id/edi_usuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:inputType="numberDecimal"
+        tools:text="cedula" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:textSize="18dp"
+        android:layout_gravity="center"
+        android:text="INGRESE CONTRASEÑA:"
+        android:gravity="center"
+         />
+
+    <EditText
+        android:id="@+id/edi_contra"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        tools:text="contraseña" />
+
+
+    <Button
+        android:id="@+id/bt_ingresar"
+        android:layout_width="match_parent"
+        android:layout_height="100px"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="INGRESAR" />
+
+</LinearLayout>

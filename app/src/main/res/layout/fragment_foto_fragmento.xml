@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".foto_fragmento"
+    android:background="@color/rounded_container_bg"
+    android:id="@+id/fragmentofoto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/bot_cerrar"
+            android:layout_width="180px"
+            android:layout_height="80px"
+            android:gravity="center"
+            android:layout_gravity="right"
+            android:text="X"
+            android:visibility="invisible"/>
+
+        <ImageView
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:id="@+id/iv_fot"
+            />
+
+        </LinearLayout>
+    <!-- TODO: Update blank fragment layout -->
+
+
+</FrameLayout>
