@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".fragmentomedidas"
+    tools:context=".Presentacion.fragmentomedidas"
     android:id="@+id/fragmentomedidas">
 
     <!-- TODO: Update blank fragment layout -->

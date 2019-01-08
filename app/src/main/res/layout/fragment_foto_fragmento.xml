@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".foto_fragmento"
+    tools:context=".Presentacion.foto_fragmento"
     android:background="@color/rounded_container_bg"
     android:id="@+id/fragmentofoto">
 

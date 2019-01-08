@@ -1,4 +1,4 @@
-package com.example.julia.aplicacion;
+package com.example.julia.aplicacion.Presentacion;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -17,6 +17,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
+
+import com.example.julia.aplicacion.R;
 
 public class Principal_Activity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,pruebaFragment.OnFragmentInteractionListener,fragmentomedidas.OnFragmentInteractionListener,rutina_fragmento.OnFragmentInteractionListener,foto_fragmento.OnFragmentInteractionListener {

@@ -1,4 +1,4 @@
-package com.example.julia.aplicacion;
+package com.example.julia.aplicacion.Presentacion;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -18,6 +18,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.julia.aplicacion.Persistencia.Conexion;
+import com.example.julia.aplicacion.R;
 
 
 /**
