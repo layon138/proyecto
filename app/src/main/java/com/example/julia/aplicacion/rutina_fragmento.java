@@ -21,6 +21,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
+import com.example.julia.aplicacion.Negocio.Ejercicio;
+import com.example.julia.aplicacion.Persistencia.Conexion;
 
 import org.json.JSONArray;
 import org.json.JSONException;

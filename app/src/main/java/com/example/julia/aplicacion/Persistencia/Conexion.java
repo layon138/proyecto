@@ -1,4 +1,4 @@
-package com.example.julia.aplicacion;
+package com.example.julia.aplicacion.Persistencia;
 
 public class Conexion {
     public String url="http://192.168.0.6:81/proy_gimnasio/";

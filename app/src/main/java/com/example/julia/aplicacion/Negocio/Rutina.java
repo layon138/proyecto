@@ -1,4 +1,6 @@
-package com.example.julia.aplicacion;
+package com.example.julia.aplicacion.Negocio;
+
+import com.example.julia.aplicacion.Negocio.Ejercicio;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package com.example.julia.aplicacion;
+package com.example.julia.aplicacion.Negocio;
 
 public class Ejercicio {
 

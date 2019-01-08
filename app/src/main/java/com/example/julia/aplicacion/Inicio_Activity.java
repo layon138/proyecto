@@ -15,14 +15,16 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.julia.aplicacion.Persistencia.Conexion;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 
 public class Inicio_Activity extends AppCompatActivity {
+
     //se llaman las variables que vienen del xml
     private Button bt_ingresar;
-    private EditText edi_usuario;
+    private EditText edi_usuario,edi_contra;
     //se crean los objetos para llamar la base de datos
     private Conexion con;
     private JSONArray ja;
@@ -31,6 +33,7 @@ public class Inicio_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         edi_usuario=(EditText)findViewById(R.id.edi_usuario);
+        edi_contra=(EditText)findViewById(R.id.edi_contra);
         bt_ingresar=(Button)findViewById(R.id.bt_ingresar);
         bt_ingresar.setOnClickListener(new View.OnClickListener() {
             @Override

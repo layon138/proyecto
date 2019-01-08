@@ -1,4 +1,6 @@
-package com.example.julia.aplicacion;
+package com.example.julia.aplicacion.Negocio;
+
+import com.example.julia.aplicacion.Negocio.Persona;
 
 public class Usuario extends Persona {
         String Discapacidad;

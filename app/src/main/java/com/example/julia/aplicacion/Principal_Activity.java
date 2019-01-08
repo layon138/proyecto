@@ -77,7 +77,7 @@ public class Principal_Activity extends AppCompatActivity
 
         return super.onOptionsItemSelected(item);
     }
-
+//se seleccionan el menu a abrir
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {

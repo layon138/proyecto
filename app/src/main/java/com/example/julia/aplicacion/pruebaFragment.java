@@ -20,6 +20,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.julia.aplicacion.Negocio.Usuario;
+import com.example.julia.aplicacion.Persistencia.Conexion;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -42,6 +44,7 @@ public class pruebaFragment extends Fragment {
     JSONArray ja;
 
     // TODO: Rename and change types of parameters
+    //fragmento para el perfil del usuario
     private String mParam1;
     private String mParam2;
     private TextView t_nom,t_apl,t_ced,t_tel,t_dir,t_rh,t_fe,t_ge,t_eps;
@@ -133,7 +136,6 @@ public class pruebaFragment extends Fragment {
     //se encarga de cargar la foto del usuario
     public void cargarimagen(){
         RequestQueue queue = Volley.newRequestQueue(getActivity().getApplicationContext());
-
         ImageRequest imageRequest=new ImageRequest(con.mostrarimagen(rutaimagen), new Response.Listener<Bitmap>() {
             @Override
             public void onResponse(Bitmap response) {
