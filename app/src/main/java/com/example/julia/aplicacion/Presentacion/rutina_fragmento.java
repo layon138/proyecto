@@ -44,12 +44,12 @@ public class rutina_fragmento extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    TextView tv_ser,tv_ediser,tv_rep,tv_edirep,tv_nom,tv_mus,tv_edimus,tv_edinom,text_view_countdown;
-    Button b_listo;
-    ImageView ejercicio;
-    ArrayList<Ejercicio> rutina;
-    JSONArray ja;
-    Conexion con;
+    private TextView tv_ser,tv_ediser,tv_rep,tv_edirep,tv_nom,tv_mus,tv_edimus,tv_edinom,text_view_countdown;
+    private Button b_listo;
+    private ImageView ejercicio;
+    private ArrayList<Ejercicio> rutina;
+    private JSONArray ja;
+    private Conexion con;
     private  long START_TIME_IN_MILLIS = 5000;
     private int numserie=0;
     private int numejercio=0;
