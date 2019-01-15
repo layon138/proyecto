@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -26,6 +27,7 @@ public class Inicio_Activity extends AppCompatActivity {
     //se llaman las variables que vienen del xml
     private Button bt_ingresar;
     private EditText edi_usuario,edi_contra;
+    private ImageView iv_logo;
     //se crean los objetos para llamar la base de datos
     private Conexion con;
     private JSONArray ja;
@@ -33,6 +35,8 @@ public class Inicio_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+        iv_logo=(ImageView)findViewById(R.id.iv_logo);
+        
         edi_usuario=(EditText)findViewById(R.id.edi_usuario);
         edi_contra=(EditText)findViewById(R.id.edi_contra);
         bt_ingresar=(Button)findViewById(R.id.bt_ingresar);
