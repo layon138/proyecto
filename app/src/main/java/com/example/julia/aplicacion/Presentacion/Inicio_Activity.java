@@ -36,7 +36,7 @@ public class Inicio_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         iv_logo=(ImageView)findViewById(R.id.iv_logo);
-        
+        iv_logo.setImageResource(R.drawable.app);
         edi_usuario=(EditText)findViewById(R.id.edi_usuario);
         edi_contra=(EditText)findViewById(R.id.edi_contra);
         bt_ingresar=(Button)findViewById(R.id.bt_ingresar);

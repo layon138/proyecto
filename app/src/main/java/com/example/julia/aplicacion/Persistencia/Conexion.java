@@ -1,7 +1,7 @@
 package com.example.julia.aplicacion.Persistencia;
 
 public class Conexion {
-    public String url="http://192.168.0.6:81/proy_gimnasio/";
+    public String url="http://soren.itiud.org/";
 
     public Conexion() {
 
