@@ -5,11 +5,12 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/azullogo"
     tools:context=".Presentacion.Inicio_Activity">
 
     <ImageView
         android:id="@+id/iv_logo"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_gravity="top"
         />
@@ -51,7 +52,7 @@
 
     <Button
         android:id="@+id/bt_ingresar"
-        android:layout_width="match_parent"
+        android:layout_width="400px"
         android:layout_height="100px"
         android:layout_gravity="center"
         android:gravity="center"
