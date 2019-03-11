@@ -16,6 +16,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.julia.aplicacion.R;
@@ -23,6 +25,7 @@ import com.example.julia.aplicacion.R;
 public class Principal_Activity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,pruebaFragment.OnFragmentInteractionListener,fragmentomedidas.OnFragmentInteractionListener,rutina_fragmento.OnFragmentInteractionListener,foto_fragmento.OnFragmentInteractionListener {
         private String clave;
+        private TextView imagen;
 
 
     @Override
@@ -31,7 +34,6 @@ public class Principal_Activity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,6 +49,9 @@ public class Principal_Activity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        View hView =  navigationView.getHeaderView(0);
+        TextView nav_user = (TextView)hView.findViewById(R.id.textito);
+        nav_user.setText("funciona");
         navigationView.setNavigationItemSelectedListener(this);
         Bundle extras=getIntent().getExtras();
         clave=extras.getString("usuario");

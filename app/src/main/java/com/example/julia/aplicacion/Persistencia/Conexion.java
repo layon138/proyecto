@@ -1,14 +1,14 @@
 package com.example.julia.aplicacion.Persistencia;
 
 public class Conexion {
-    public String url="http://soren.itiud.org/";
+    public String url="http://192.168.0.6:81/proy_gimnasio/";
 
     public Conexion() {
 
     }
 
-    public String entrarapp(String palabra){
-        return getUrl()+"consultar_usuario.php?user="+palabra;
+    public String entrarapp(String id,String clave){
+        return getUrl()+"consultar_usuario.php?user="+id+"&"+"clave="+clave;
     }
 
     public String mostrarusuario(String palabra){

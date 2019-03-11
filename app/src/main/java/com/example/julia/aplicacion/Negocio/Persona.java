@@ -2,15 +2,15 @@ package com.example.julia.aplicacion.Negocio;
 
 public class Persona {
 
-    String cedula;
-    String nombre;
-    String apellido;
-    String fec_nac;
-    String direccion;
-    String telefono;
-    String eps;
-    String rh;
-    String sexo;
+    private String cedula;
+    private String nombre;
+    private String apellido;
+    private String fec_nac;
+    private String direccion;
+    private String telefono;
+    private String eps;
+    private String rh;
+    private String sexo;
 
 
 

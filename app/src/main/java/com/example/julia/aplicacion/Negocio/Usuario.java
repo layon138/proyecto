@@ -3,10 +3,11 @@ package com.example.julia.aplicacion.Negocio;
 import com.example.julia.aplicacion.Negocio.Persona;
 
 public class Usuario extends Persona {
-        String Discapacidad;
-        int rutina;
-        int instructor;
-        int dieta;
+    private String Discapacidad;
+    private int rutina;
+    private int instructor;
+    private int dieta;
+
 
     public Usuario(){
             super();

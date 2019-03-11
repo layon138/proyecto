@@ -6,19 +6,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/azullogo"
+    android:id="@+id/pantalla"
     tools:context=".Presentacion.Inicio_Activity">
 
     <ImageView
         android:id="@+id/iv_logo"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_gravity="top"
+        android:layout_gravity="center"
         />
 
     <TextView
+        android:id="@+id/tex_usuario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"
         android:textSize="18dp"
         android:text="INGRESE CEDULA:"
         android:gravity="center" />
@@ -33,6 +37,7 @@
         tools:text="cedula" />
 
     <TextView
+        android:id="@+id/tex_contra"
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:textSize="18dp"
@@ -47,6 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
+        android:inputType="textPassword"
         tools:text="contraseña" />
 
 
