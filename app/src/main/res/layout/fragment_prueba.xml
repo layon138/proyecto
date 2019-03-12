@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:background="@color/azullogo"
     tools:context=".Presentacion.pruebaFragment">
 
     <TextView
@@ -17,8 +18,13 @@
         android:textSize="25sp" />
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="400px"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"
+        android:layout_gravity="center"
+        android:layout_weight="1"
         android:id="@+id/iv_foto"/>
 
 
@@ -28,8 +34,10 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/tex_cedula"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
             android:text="Cedula:"
             android:textSize="20sp" />
 
@@ -49,9 +57,11 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/tex_nombres"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Nombres:"
+            android:background="@color/colorAccent"
             android:textSize="20sp" />
 
         <TextView
@@ -70,8 +80,10 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/tex_apellidos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
             android:text="Apellidos:"
             android:textSize="20sp" />
 
@@ -91,8 +103,10 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/tex_telefono"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
             android:text="Telefono:"
             android:textSize="20sp" />
 
@@ -112,8 +126,10 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/tex_direccion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
             android:text="Direccion:"
             android:textSize="20sp" />
 
@@ -133,8 +149,10 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/tex_fecha"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
             android:text="Fecha de nacimiento:"
             android:textSize="20sp" />
 
@@ -154,8 +172,10 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/tex_genero"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
             android:text="Genero:"
             android:textSize="20sp" />
 
@@ -175,8 +195,10 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/tex_eps"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
             android:text="EPS:"
             android:textSize="20sp" />
 
@@ -196,8 +218,10 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/tex_rh"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
             android:text="RH:"
             android:textSize="20sp" />
 

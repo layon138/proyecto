@@ -2,8 +2,10 @@ package com.example.julia.aplicacion.Negocio;
 
 import com.example.julia.aplicacion.Negocio.Persona;
 
-public class Usuario extends Persona {
-    private String Discapacidad;
+import java.io.Serializable;
+
+public class Usuario extends Persona  {
+    private String fotoperfil;
     private int rutina;
     private int instructor;
     private int dieta;
@@ -13,12 +15,12 @@ public class Usuario extends Persona {
             super();
         }
 
-        public String getDiscapacidad() {
-            return Discapacidad;
+        public String getFotoperfil() {
+            return fotoperfil;
         }
 
-        public void setDiscapacidad(String Discapacidad) {
-            this.Discapacidad = Discapacidad;
+        public void setFotoperfil(String Discapacidad) {
+            this.fotoperfil = Discapacidad;
         }
 
         public int getRutina() {
@@ -48,6 +50,6 @@ public class Usuario extends Persona {
         @Override
         public String toString() {
 
-            return super.toString() + "\nDiscapacidad=" + Discapacidad + "\nrutina=" + rutina + "\ninstructor=" + instructor + "\ndieta=" + dieta;
+            return super.toString() + "\nDiscapacidad=" + fotoperfil + "\nrutina=" + rutina + "\ninstructor=" + instructor + "\ndieta=" + dieta;
         }
 }

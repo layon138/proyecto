@@ -1,16 +1,19 @@
 package com.example.julia.aplicacion.Negocio;
 
-public class Persona {
+import java.io.Serializable;
+
+public class Persona implements Serializable{
 
     private String cedula;
     private String nombre;
     private String apellido;
     private String fec_nac;
-    private String direccion;
+    private String correo;
     private String telefono;
     private String eps;
     private String rh;
     private String sexo;
+    private String celular;
 
 
 
@@ -22,24 +25,32 @@ public class Persona {
         telefono="";
         eps="";
         sexo="";
-
         rh="";
-        direccion="";
+        correo="";
         fec_nac="";
-
+        celular="";
     }
 
-    public Persona(String cedula, String nombre, String apellido, String fec_nac, String direccion, String telefono, String eps, String sexo, String rh){
-        this.cedula=cedula;
-        this.nombre=nombre;
-        this.apellido=apellido;
-        this.fec_nac=fec_nac;
-        this.direccion=direccion;
-        this.telefono=telefono;
+    public Persona(String cedula, String nombre, String apellido, String fec_nac, String correo, String telefono, String eps, String rh, String sexo, String celular) {
+        this.cedula = cedula;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.fec_nac = fec_nac;
+        this.correo = correo;
+        this.telefono = telefono;
+        this.eps = eps;
+        this.rh = rh;
+        this.sexo = sexo;
+        this.celular = celular;
+    }
 
-        this.eps=eps;
-        this.sexo=sexo;
-        this.rh=rh;
+
+    public String getCelular() {
+        return celular;
+    }
+
+    public void setCelular(String celular) {
+        this.celular = celular;
     }
 
     public String getCedula() {
@@ -98,12 +109,12 @@ public class Persona {
         this.fec_nac = fec_nac;
     }
 
-    public String getDireccion() {
-        return direccion;
+    public String getCorreo() {
+        return correo;
     }
 
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
 
     public String getSexo() {
@@ -116,7 +127,7 @@ public class Persona {
 
     @Override
     public String toString() {
-        return "Persona:" + "\ncedula=" + cedula + "\nnombre=" + nombre + "\napellido=" + apellido + "\nfec_nac=" + fec_nac.toString() + "\ndireccion=" + direccion + "\ntelefono=" + telefono  + "\neps=" + eps + "\nrh=" + rh + "\nsexo=" + sexo;
+        return "Persona:" + "\ncedula=" + cedula + "\nnombre=" + nombre + "\napellido=" + apellido + "\nfec_nac=" + fec_nac.toString() + "\ndireccion=" + correo + "\ntelefono=" + telefono  + "\neps=" + eps + "\nrh=" + rh + "\nsexo=" + sexo;
     }
 
 

@@ -19,12 +19,15 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.julia.aplicacion.Negocio.Persona;
 import com.example.julia.aplicacion.Negocio.Usuario;
 import com.example.julia.aplicacion.Persistencia.Conexion;
 import com.example.julia.aplicacion.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+
+import java.io.Serializable;
 
 public class Inicio_Activity extends AppCompatActivity {
 
@@ -84,21 +87,17 @@ public class Inicio_Activity extends AppCompatActivity {
             public void onResponse(String response) {
                 try {
                     ja = new JSONArray(response);
-                    String contra = ja.getString(0);
                     usu=new Usuario();
                     usu.setCedula(ja.getString(0));
                     usu.setNombre(ja.getString(1));
                     usu.setApellido(ja.getString(2));
-                    usu.setTelefono(ja.getString(3));
-                    usu.setDireccion(ja.getString(4));
-                    usu.setFec_nac(ja.getString(5));
-                    usu.setSexo(ja.getString(6));
-                    usu.setEps(ja.getString(7));
-                    usu.setRh(ja.getString(8));
-                    rutaimagen=ja.getString(9);
-                    Toast.makeText(getApplicationContext(), "Bienvenido: "+ja.getString(0), Toast.LENGTH_SHORT).show();
+                    usu.setFotoperfil(ja.getString(4));
+
                     Intent intent = new Intent(getApplicationContext(),Principal_Activity.class);
-                    intent.putExtra("usuario",edi_usuario.getText().toString());
+                    Bundle bundle=new Bundle();
+                    bundle.putSerializable("usuario", usu);
+                    Toast.makeText(getApplicationContext(), "Bienvenido: "+usu.getNombre(), Toast.LENGTH_SHORT).show();
+                    intent.putExtras(bundle);
                     startActivity(intent);
                     finish();
                 } catch (JSONException e) {

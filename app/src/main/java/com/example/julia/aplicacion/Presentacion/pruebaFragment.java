@@ -6,9 +6,12 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -41,19 +44,19 @@ public class pruebaFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    Conexion con;
-
-    JSONArray ja;
+    private Conexion con;
+    private View v;
+    private JSONArray ja;
 
     // TODO: Rename and change types of parameters
     //fragmento para el perfil del usuario
     private String mParam1;
     private String mParam2;
     private TextView t_nom,t_apl,t_ced,t_tel,t_dir,t_rh,t_fe,t_ge,t_eps;
+    private TextView tex_cedula,tex_nombres,tex_apellidos,tex_telefono,tex_fecha,tex_direccion,tex_genero,tex_eps,tex_rh;
     private ImageView foto;
     private Usuario usu;
     private String texto;
-    private String rutaimagen;
     private OnFragmentInteractionListener mListener;
 
     public pruebaFragment() {
@@ -89,54 +92,20 @@ public class pruebaFragment extends Fragment {
     }
 
     //se encarga de cargar los datos del usuario
-    public void cargardatos(String url){
-        Toast.makeText(getActivity().getApplicationContext(), "Bienvenido: "+url, Toast.LENGTH_SHORT).show();
-        Log.i("url",url);
-        RequestQueue queue = Volley.newRequestQueue(getActivity().getApplicationContext());
-        StringRequest stringRequest =new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                try {
-                    response=response.replace("][",",");
-                    ja = new JSONArray(response);
-                    usu=new Usuario();
-                    usu.setCedula(ja.getString(0));
-                    usu.setNombre(ja.getString(1));
-                    usu.setApellido(ja.getString(2));
-                    usu.setTelefono(ja.getString(3));
-                    usu.setDireccion(ja.getString(4));
-                    usu.setFec_nac(ja.getString(5));
-                    usu.setSexo(ja.getString(6));
-                    usu.setEps(ja.getString(7));
-                    usu.setRh(ja.getString(8));
-                    rutaimagen=ja.getString(9);
+    public void cargardatos(){
                     t_ced.setText(usu.getCedula());
                     t_nom.setText(usu.getNombre());
-                    t_apl.setText(usu.getApellido());
+                    /*t_apl.setText(usu.getApellido());
                     t_tel.setText(usu.getTelefono());
-                    t_dir.setText(usu.getDireccion());
                     t_fe.setText(usu.getFec_nac());
                     t_ge.setText(usu.getSexo());
                     t_eps.setText(usu.getEps());
-                    t_rh.setText(usu.getRh());
-                    cargarimagen();
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                    Toast.makeText(getActivity().getApplicationContext(), "El usaurio no existe", Toast.LENGTH_SHORT).show();
-                }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getActivity().getApplicationContext(), "falla:"+error.toString(), Toast.LENGTH_SHORT).show();
-            }
-        });
-        queue.add(stringRequest);
-
+                    t_rh.setText(usu.getRh());*/
+                    cargarimagen(usu.getFotoperfil());
     }
 
     //se encarga de cargar la foto del usuario
-    public void cargarimagen(){
+    public void cargarimagen(String rutaimagen){
         RequestQueue queue = Volley.newRequestQueue(getActivity().getApplicationContext());
         ImageRequest imageRequest=new ImageRequest(con.mostrarimagen(rutaimagen), new Response.Listener<Bitmap>() {
             @Override
@@ -158,7 +127,19 @@ public class pruebaFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View v = inflater.inflate(R.layout.fragment_prueba, container, false);
+        v = inflater.inflate(R.layout.fragment_prueba, container, false);
+        iniciarpantalla();
+        con=new Conexion();
+        usu=(Usuario) getArguments().getSerializable("usuario");
+        cargardatos();
+        return v;
+    }
+
+    //Se encarga de Iniciar los objetos del XML y de acomodarlos al tamaño de la pantalla
+    public void iniciarpantalla(){
+        Display display = getActivity().getWindowManager().getDefaultDisplay();
+        int ancho = display.getWidth();
+        int alto= display.getHeight();
         t_ced=(TextView)v.findViewById(R.id.tv_ced);
         t_nom=(TextView)v.findViewById(R.id.tv_nom);
         t_apl=(TextView)v.findViewById(R.id.tv_ap);
@@ -169,9 +150,35 @@ public class pruebaFragment extends Fragment {
         t_ge=(TextView)v.findViewById(R.id.tv_gn);
         t_eps=(TextView)v.findViewById(R.id.tv_eps);
         foto=(ImageView)v.findViewById(R.id.iv_foto);
-        con=new Conexion();
-        cargardatos(con.mostrarusuario(getArguments().getString("usuario")));
-        return v;
+        tex_cedula=(TextView)v.findViewById(R.id.tex_cedula);
+        tex_nombres=(TextView)v.findViewById(R.id.tex_nombres);
+        tex_apellidos=(TextView)v.findViewById(R.id.tex_apellidos);
+        tex_direccion=(TextView)v.findViewById(R.id.tex_direccion);
+        tex_telefono=(TextView)v.findViewById(R.id.tex_telefono);
+        tex_fecha=(TextView)v.findViewById(R.id.tex_fecha);
+        tex_genero=(TextView)v.findViewById(R.id.tex_genero);
+        tex_eps=(TextView)v.findViewById(R.id.tex_eps);
+        tex_rh=(TextView)v.findViewById(R.id.tex_rh);
+        foto.getLayoutParams().width=((ancho/5)*3);
+        foto.getLayoutParams().height=(alto/2);
+        tex_cedula.getLayoutParams().width=(ancho/3);
+        t_ced.getLayoutParams().width=(ancho/3)*2;
+        tex_nombres.getLayoutParams().width=(ancho/3);
+        t_nom.getLayoutParams().width=(ancho/3)*2;
+        tex_apellidos.getLayoutParams().width=(ancho/3);
+        t_apl.getLayoutParams().width=(ancho/3)*2;
+        tex_direccion.getLayoutParams().width=(ancho/3);
+        t_dir.getLayoutParams().width=(ancho/3)*2;
+        tex_telefono.getLayoutParams().width=(ancho/3);
+        t_tel.getLayoutParams().width=(ancho/3)*2;
+        tex_fecha.getLayoutParams().width=(ancho/3);
+        t_fe.getLayoutParams().width=(ancho/3)*2;
+        tex_genero.getLayoutParams().width=(ancho/3);
+        t_ge.getLayoutParams().width=(ancho/3)*2;
+        tex_eps.getLayoutParams().width=(ancho/3);
+        t_eps.getLayoutParams().width=(ancho/3)*2;
+        tex_rh.getLayoutParams().width=(ancho/3);
+        t_rh.getLayoutParams().width=(ancho/3)*2;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

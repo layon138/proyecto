@@ -3,6 +3,7 @@
     <color name="colorPrimary">#545454</color>
     <color name="colorPrimaryDark">#545454</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="colorsecundario">#BA3361</color>
     <color name="rounded_container_bg">#22000000</color>
     <color name="azullogo">#5DBCD2</color>
 </resources>

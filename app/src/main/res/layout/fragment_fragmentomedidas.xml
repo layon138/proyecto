@@ -35,6 +35,7 @@
         />
 
     <LinearLayout
+        android:id="@+id/lin_medidas"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal">
@@ -55,6 +56,7 @@
                     android:layout_height="wrap_content"
                     android:text="FECHA"
                     android:textColor="#005500"
+                    android:background="@color/azullogo"
                     android:textSize="14sp" />
 
 
@@ -80,6 +82,7 @@
 
                 <TextView
                     android:id="@+id/Anio1"
+                    android:background="@color/colorAccent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="left"
@@ -94,6 +97,7 @@
 
                 <TextView
                     android:id="@+id/Anio2"
+                    android:background="@color/colorsecundario"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="left"
@@ -109,6 +113,7 @@
 
                 <TextView
                     android:id="@+id/Anio3"
+                    android:background="@color/colorAccent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="left"
@@ -124,6 +129,7 @@
 
                 <TextView
                     android:id="@+id/Anio4"
+                    android:background="@color/colorsecundario"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="left"
@@ -139,6 +145,7 @@
 
                 <TextView
                     android:id="@+id/Anio5"
+                    android:background="@color/colorAccent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="left"
@@ -153,6 +160,7 @@
 
                 <TextView
                     android:id="@+id/Anio6"
+                    android:background="@color/colorsecundario"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="left"
@@ -168,6 +176,7 @@
 
                 <TextView
                     android:id="@+id/Anio7"
+                    android:background="@color/colorAccent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="left"
@@ -183,6 +192,7 @@
 
                 <TextView
                     android:id="@+id/Anio8"
+                    android:background="@color/colorsecundario"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="left"
@@ -198,6 +208,7 @@
 
                 <TextView
                     android:id="@+id/Anio9"
+                    android:background="@color/colorAccent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="left"
@@ -212,6 +223,7 @@
 
                 <TextView
                     android:id="@+id/Anio10"
+                    android:background="@color/colorsecundario"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="left"
@@ -227,6 +239,7 @@
 
                 <TextView
                     android:id="@+id/Anio11"
+                    android:background="@color/colorAccent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="left"
@@ -241,6 +254,7 @@
 
                 <TextView
                     android:id="@+id/Anio12"
+                    android:background="@color/colorsecundario"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="left"

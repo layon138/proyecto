@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -40,19 +41,13 @@ import org.json.JSONException;
 import java.util.ArrayList;
 
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link fragmentomedidas.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link fragmentomedidas#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class fragmentomedidas extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private View v;
     private ArrayList <Medida> med;
     private Conexion con;
     private String fot;
@@ -67,6 +62,7 @@ public class fragmentomedidas extends Fragment {
     ArrayList<Entry> yValues =new ArrayList<>();
     int contador=0;
     Button cerrar;
+    private LinearLayout lin_medidas;
 
 
 
@@ -112,23 +108,23 @@ public class fragmentomedidas extends Fragment {
                 try {
                     ja = new JSONArray(response);
 
-                    for(int i=2;i<ja.length();i+=17){
+                    for(int i=1;i<ja.length();i+=16){
                         Medida medida=new Medida();
                         medida.setFec(ja.getString(i));
-                        medida.setPeso(Float.parseFloat(ja.getString(i+1)));
-                        medida.setImc(Float.parseFloat(ja.getString(i+2)));
-                        medida.setIgc(Float.parseFloat(ja.getString(i+3)));
-                        medida.setCuello(Integer.parseInt(ja.getString(i+4)));
-                        medida.setEspalda(Integer.parseInt(ja.getString(i+5)));
-                        medida.setBrazo(Integer.parseInt(ja.getString(i+6)));
-                        medida.setAntebrazo(Integer.parseInt(ja.getString(i+7)));
-                        medida.setGluteo(Integer.parseInt(ja.getString(i+8)));
-                        medida.setPecho(Integer.parseInt(ja.getString(i+9)));
-                        medida.setAbdomen(Integer.parseInt(ja.getString(i+10)));
-                        medida.setPierna(Integer.parseInt(ja.getString(i+11)));
-                        medida.setPantorrilla(Integer.parseInt(ja.getString(i+12)));
-                        medida.setFrontal(ja.getString(i+13));
-                        medida.setLateral(ja.getString(i+14));
+                        medida.setPeso(Float.parseFloat(ja.getString(i+3)));
+                        medida.setImc(Float.parseFloat(ja.getString(i+4)));
+                        medida.setIgc(Float.parseFloat(ja.getString(i+5)));
+                        medida.setCuello(Integer.parseInt(ja.getString(i+6)));
+                        medida.setEspalda(Integer.parseInt(ja.getString(i+7)));
+                        medida.setBrazo(Integer.parseInt(ja.getString(i+8)));
+                        medida.setAntebrazo(Integer.parseInt(ja.getString(i+9)));
+                        medida.setGluteo(Integer.parseInt(ja.getString(i+10)));
+                        medida.setPecho(Integer.parseInt(ja.getString(i+6)));
+                        medida.setAbdomen(Integer.parseInt(ja.getString(i+11)));
+                        medida.setPierna(Integer.parseInt(ja.getString(i+12)));
+                        medida.setPantorrilla(Integer.parseInt(ja.getString(i+13)));
+                        medida.setFrontal(ja.getString(i+1));
+                        medida.setLateral(ja.getString(i+2));
                         med.add(medida);
                     }
 
@@ -161,8 +157,9 @@ public class fragmentomedidas extends Fragment {
                 {
                     cargarimagen(med.get(n).getFrontal());
                     f=med.get(n).getFrontal();
-                    int alto=foto.getLayoutParams().height = ViewGroup.LayoutParams.MATCH_PARENT;
-                    int ancho=foto.getLayoutParams().width = ViewGroup.LayoutParams.MATCH_PARENT;
+                    Display display = getActivity().getWindowManager().getDefaultDisplay();
+                    int ancho = display.getWidth();
+                    int alto= display.getHeight();
                     LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ancho, alto);
                     foto.setLayoutParams(params);
                     ancho=0;
@@ -257,36 +254,10 @@ public class fragmentomedidas extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_fragmentomedidas, container, false);
+        v = inflater.inflate(R.layout.fragment_fragmentomedidas, container, false);
         con=new Conexion();
         med=new ArrayList<>();
-        table = (TableLayout)v.findViewById(R.id.myTableLayout);
-        tx_peso=(TextView)v.findViewById(R.id.Anio1);
-        tx_imc=(TextView)v.findViewById(R.id.Anio2);
-        tx_igc=(TextView) v.findViewById(R.id.Anio3);
-        tx_cuello=(TextView) v.findViewById(R.id.Anio4);
-        tx_espalda=(TextView) v.findViewById(R.id.Anio5);
-        tx_brazo=(TextView) v.findViewById(R.id.Anio6);
-        tx_antebrazo=(TextView) v.findViewById(R.id.Anio7);
-        tx_gluteo=(TextView) v.findViewById(R.id.Anio8);
-        tx_pecho=(TextView) v.findViewById(R.id.Anio9);
-        tx_abdomen=(TextView) v.findViewById(R.id.Anio10);
-        tx_pierna=(TextView) v.findViewById(R.id.Anio11);
-        tx_pantorrilla=(TextView) v.findViewById(R.id.Anio12);
-        tr_fecha = (TableRow) v.findViewById(R.id.Cabecera);
-        tr_peso=(TableRow) v.findViewById(R.id.Fila1);
-        tr_imc=(TableRow) v.findViewById(R.id.Fila2);
-        tr_igc=(TableRow) v.findViewById(R.id.Fila3);
-        tr_cuello=(TableRow) v.findViewById(R.id.Fila4);
-        tr_espalda=(TableRow) v.findViewById(R.id.Fila5);
-        tr_brazo=(TableRow) v.findViewById(R.id.Fila6);
-        tr_antebrazo=(TableRow) v.findViewById(R.id.Fila7);
-        tr_gluteo=(TableRow) v.findViewById(R.id.Fila8);
-        tr_pecho=(TableRow) v.findViewById(R.id.Fila9);
-        tr_abdomen=(TableRow) v.findViewById(R.id.Fila10);
-        tr_pierna=(TableRow) v.findViewById(R.id.Fila11);
-        tr_pantorrilla=(TableRow) v.findViewById(R.id.Fila12);
-        cerrar=(Button) v.findViewById(R.id.bot_cerrar);
+        iniciarpantalla();
         cerrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -299,7 +270,7 @@ public class fragmentomedidas extends Fragment {
 
             }
         });
-        foto=(ImageView)v.findViewById(R.id.iv_fot);
+
         piechar=v.findViewById(R.id.piechar);
         cargardatos(con.mostrarmedida(getArguments().getString("usuario")));
         final ArrayList<String> theDates=new ArrayList<>();
@@ -352,6 +323,45 @@ public class fragmentomedidas extends Fragment {
             }
         });
         return v;
+    }
+
+    public void iniciarpantalla(){
+        Display display = getActivity().getWindowManager().getDefaultDisplay();
+        int ancho = display.getWidth();
+        int alto= display.getHeight();
+        lin_medidas=v.findViewById(R.id.lin_medidas);
+        lin_medidas.getLayoutParams().height=(alto/2);
+        table = (TableLayout)v.findViewById(R.id.myTableLayout);
+        foto=(ImageView)v.findViewById(R.id.iv_fot);
+        table.getLayoutParams().height=(alto/2);
+        foto.getLayoutParams().height=(alto/2);
+        tx_peso=(TextView)v.findViewById(R.id.Anio1);
+        tx_imc=(TextView)v.findViewById(R.id.Anio2);
+        tx_igc=(TextView) v.findViewById(R.id.Anio3);
+        tx_cuello=(TextView) v.findViewById(R.id.Anio4);
+        tx_espalda=(TextView) v.findViewById(R.id.Anio5);
+        tx_brazo=(TextView) v.findViewById(R.id.Anio6);
+        tx_antebrazo=(TextView) v.findViewById(R.id.Anio7);
+        tx_gluteo=(TextView) v.findViewById(R.id.Anio8);
+        tx_pecho=(TextView) v.findViewById(R.id.Anio9);
+        tx_abdomen=(TextView) v.findViewById(R.id.Anio10);
+        tx_pierna=(TextView) v.findViewById(R.id.Anio11);
+        tx_pantorrilla=(TextView) v.findViewById(R.id.Anio12);
+        tr_fecha = (TableRow) v.findViewById(R.id.Cabecera);
+        tr_peso=(TableRow) v.findViewById(R.id.Fila1);
+        tr_imc=(TableRow) v.findViewById(R.id.Fila2);
+        tr_igc=(TableRow) v.findViewById(R.id.Fila3);
+        tr_cuello=(TableRow) v.findViewById(R.id.Fila4);
+        tr_espalda=(TableRow) v.findViewById(R.id.Fila5);
+        tr_brazo=(TableRow) v.findViewById(R.id.Fila6);
+        tr_antebrazo=(TableRow) v.findViewById(R.id.Fila7);
+        tr_gluteo=(TableRow) v.findViewById(R.id.Fila8);
+        tr_pecho=(TableRow) v.findViewById(R.id.Fila9);
+        tr_abdomen=(TableRow) v.findViewById(R.id.Fila10);
+        tr_pierna=(TableRow) v.findViewById(R.id.Fila11);
+        tr_pantorrilla=(TableRow) v.findViewById(R.id.Fila12);
+        cerrar=(Button) v.findViewById(R.id.bot_cerrar);
+
     }
 
 

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v4.app.Fragment;
 import android.util.Log;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,6 +58,7 @@ public class rutina_fragmento extends Fragment {
     private CountDownTimer mCountDownTimer;
     private boolean mTimerRunning;
     private long mTimeLeftInMillis = START_TIME_IN_MILLIS;
+    private View v;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -99,21 +101,13 @@ public class rutina_fragmento extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_rutina_fragmento, container, false);
+        v = inflater.inflate(R.layout.fragment_rutina_fragmento, container, false);
         con=new Conexion();
         rutina=new ArrayList<Ejercicio>();
-        ejercicio=(ImageView)v.findViewById(R.id.iv_ejercicio);
+        iniciarpantalla();
         Glide.with(getActivity()).load("http://m.gifmania.com.mx/Gifs-Animados-Mensajes/Gif-Animadas-Iniciar/Inicio-77644.gif").into(ejercicio);
-        text_view_countdown=(TextView)v.findViewById(R.id.text_view_countdown);
-        tv_rep=(TextView)v.findViewById(R.id.tv_rep);
-        tv_edirep=(TextView)v.findViewById(R.id.tv_edrep);
-        tv_ser=(TextView)v.findViewById(R.id.tv_ser);
-        tv_ediser=(TextView)v.findViewById(R.id.tv_ediser);
-        tv_edinom=(TextView)v.findViewById(R.id.tv_edieje);
-        tv_edimus=(TextView)v.findViewById(R.id.tv_edimus);
-        tv_mus=(TextView)v.findViewById(R.id.tv_MUS);
-        tv_nom=(TextView)v.findViewById(R.id.tv_eje);
-        b_listo=(Button)v.findViewById(R.id.b_listo);
+
+
         final int a=0;
         final int c=0;
         if(b_listo.getVisibility()== View.INVISIBLE){
@@ -133,13 +127,38 @@ public class rutina_fragmento extends Fragment {
                         text_view_countdown.setVisibility(View.VISIBLE);
                         text_view_countdown.setTextSize(100);
                         startTimer();
-
-
                 }
             });
 
         }
         return v;
+    }
+
+    public void iniciarpantalla(){
+        Display display = getActivity().getWindowManager().getDefaultDisplay();
+        int ancho = display.getWidth();
+        int alto= display.getHeight();
+        ejercicio=(ImageView)v.findViewById(R.id.iv_ejercicio);
+        text_view_countdown=(TextView)v.findViewById(R.id.text_view_countdown);
+        tv_rep=(TextView)v.findViewById(R.id.tv_rep);
+        tv_edirep=(TextView)v.findViewById(R.id.tv_edrep);
+        tv_ser=(TextView)v.findViewById(R.id.tv_ser);
+        tv_ediser=(TextView)v.findViewById(R.id.tv_ediser);
+        tv_edinom=(TextView)v.findViewById(R.id.tv_edieje);
+        tv_edimus=(TextView)v.findViewById(R.id.tv_edimus);
+        tv_mus=(TextView)v.findViewById(R.id.tv_MUS);
+        tv_nom=(TextView)v.findViewById(R.id.tv_eje);
+        b_listo=(Button)v.findViewById(R.id.b_listo);
+        ejercicio.getLayoutParams().height=(alto/5)*3;
+        tv_edinom.getLayoutParams().width=(ancho/4);
+        tv_nom.getLayoutParams().width=(ancho/4);
+        tv_rep.getLayoutParams().width=(ancho/4);
+        tv_edirep.getLayoutParams().width=(ancho/4);
+        tv_ser.getLayoutParams().width=(ancho/4);
+        tv_ediser.getLayoutParams().width=(ancho/4);
+        tv_mus.getLayoutParams().width=(ancho/4);
+        tv_edimus.getLayoutParams().width=(ancho/4);
+        b_listo.getLayoutParams().width=((ancho/5)*3);
     }
 
     public void visibilidadobjetos(boolean validar){

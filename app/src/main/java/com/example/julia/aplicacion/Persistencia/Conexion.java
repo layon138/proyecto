@@ -1,7 +1,7 @@
 package com.example.julia.aplicacion.Persistencia;
 
 public class Conexion {
-    public String url="http://192.168.0.6:81/proy_gimnasio/";
+    public String url="http://192.168.0.4:81/proy_gimnasio/";
 
     public Conexion() {
 
@@ -16,7 +16,7 @@ public class Conexion {
     }
 
     public String mostrarimagen(String palabra){
-        return getUrl()+palabra;
+        return getUrl()+"imagenes/"+palabra;
     }
 
     public String mostrarejercicio(String palabra){
