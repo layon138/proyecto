@@ -4,13 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/azullogo"
     tools:context=".Presentacion.rutina_fragmento">
 
     <!-- TODO: Update blank fragment layout -->
 
     <ImageView
-        android:layout_height="200dp"
-        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"
+        android:layout_weight="1"
         android:id="@+id/iv_ejercicio"
         />
 
@@ -36,6 +40,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:gravity="center"
             android:text="EJERCICIO: "
             android:id="@+id/tv_eje"
             android:visibility="invisible"/>
@@ -43,6 +48,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:gravity="center"
             android:text=""
             android:id="@+id/tv_edieje"
             android:visibility="invisible"/>
@@ -55,10 +61,11 @@
         android:orientation="horizontal">
 
         <TextView
-            android:background="@color/colorsecundario"
+            android:background="@color/colorAccent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:gravity="center"
             android:text="MUSCULO: "
             android:id="@+id/tv_MUS"
             android:visibility="invisible"/>
@@ -66,6 +73,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:gravity="center"
             android:text=""
             android:id="@+id/tv_edimus"
             android:visibility="invisible"/>
@@ -81,6 +89,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:gravity="center"
         android:text="SERIES: "
         android:id="@+id/tv_ser"
         android:visibility="invisible"/>
@@ -89,6 +98,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:gravity="center"
         android:id="@+id/tv_ediser"
         android:text=""
         android:visibility="invisible"/>
@@ -101,10 +111,11 @@
         android:orientation="horizontal">
 
     <TextView
-        android:background="@color/colorsecundario"
+        android:background="@color/colorAccent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:gravity="center"
         android:id="@+id/tv_rep"
         android:text="REPETICIONES: "
         android:visibility="invisible"/>
@@ -113,6 +124,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:gravity="center"
         android:id="@+id/tv_edrep"
         android:text=""
         android:visibility="invisible"/>
@@ -122,6 +134,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:gravity="center"
         android:id="@+id/b_listo"
         android:text="LISTO"
         android:visibility="invisible"/>

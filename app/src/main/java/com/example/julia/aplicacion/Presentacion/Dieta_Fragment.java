@@ -3,10 +3,13 @@ package com.example.julia.aplicacion.Presentacion;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.app.Fragment;
+import android.os.TestLooperManager;
+import android.support.v4.app.Fragment;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.julia.aplicacion.R;
 
@@ -27,6 +30,8 @@ public class Dieta_Fragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private View v;
+    private TextView tx_hora,tx_nombre,tx_descripcion;
 
     private OnFragmentInteractionListener mListener;
 
@@ -64,8 +69,23 @@ public class Dieta_Fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_dieta_, container, false);
+        v=inflater.inflate(R.layout.fragment_dieta, container, false);
+        iniciarpantalla();
+
+
+       return  v;
+    }
+
+    public void iniciarpantalla(){
+        Display display = getActivity().getWindowManager().getDefaultDisplay();
+        int ancho = display.getWidth();
+        int alto= display.getHeight();
+        tx_hora=v.findViewById(R.id.tx_hora);
+        tx_nombre=v.findViewById(R.id.tx_nombre);
+        tx_descripcion=v.findViewById(R.id.tx_descripcion);
+        tx_hora.getLayoutParams().width=(ancho/5);
+        tx_nombre.getLayoutParams().width=((ancho/5)*2);
+        tx_descripcion.getLayoutParams().width=((ancho/5)*2);
     }
 
     // TODO: Rename method, update argument and hook method into UI event

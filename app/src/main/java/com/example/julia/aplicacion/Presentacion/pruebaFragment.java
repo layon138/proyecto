@@ -159,7 +159,7 @@ public class pruebaFragment extends Fragment {
         tex_genero=(TextView)v.findViewById(R.id.tex_genero);
         tex_eps=(TextView)v.findViewById(R.id.tex_eps);
         tex_rh=(TextView)v.findViewById(R.id.tex_rh);
-        foto.getLayoutParams().width=((ancho/5)*3);
+        foto.getLayoutParams().width=ancho;
         foto.getLayoutParams().height=(alto/2);
         tex_cedula.getLayoutParams().width=(ancho/3);
         t_ced.getLayoutParams().width=(ancho/3)*2;

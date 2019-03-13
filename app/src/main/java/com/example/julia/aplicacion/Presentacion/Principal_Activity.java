@@ -32,7 +32,7 @@ import com.example.julia.aplicacion.Persistencia.Conexion;
 import com.example.julia.aplicacion.R;
 
 public class Principal_Activity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener,pruebaFragment.OnFragmentInteractionListener,fragmentomedidas.OnFragmentInteractionListener,rutina_fragmento.OnFragmentInteractionListener,foto_fragmento.OnFragmentInteractionListener {
+        implements NavigationView.OnNavigationItemSelectedListener,pruebaFragment.OnFragmentInteractionListener,fragmentomedidas.OnFragmentInteractionListener,rutina_fragmento.OnFragmentInteractionListener,foto_fragmento.OnFragmentInteractionListener,Dieta_Fragment.OnFragmentInteractionListener {
         private String clave;
         private Usuario usu=null;
         private TextView imagen;
@@ -133,11 +133,13 @@ public class Principal_Activity extends AppCompatActivity
             f=new fragmentomedidas();
             Fragmentoelegido=true;
         } else if (id == R.id.nav_slideshow) {
-            args.putString("usuario", usu.getCedula());
+            args.putInt("usuario", usu.getRutina());
             f=new rutina_fragmento();
             Fragmentoelegido=true;
         } else if (id == R.id.nav_manage) {
-
+            //args.putString("usuario", usu.getCedula());
+            f=new Dieta_Fragment();
+            Fragmentoelegido=true;
         } else if (id == R.id.nav_share) {
             Intent intent = new Intent(getApplicationContext(),Inicio_Activity.class);
             startActivity(intent);

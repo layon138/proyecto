@@ -61,7 +61,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Nombres:"
-            android:background="@color/colorAccent"
+            android:background="@color/colorsecundario"
             android:textSize="20sp" />
 
         <TextView
@@ -106,7 +106,7 @@
             android:id="@+id/tex_telefono"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/colorAccent"
+            android:background="@color/colorsecundario"
             android:text="Telefono:"
             android:textSize="20sp" />
 
@@ -152,7 +152,7 @@
             android:id="@+id/tex_fecha"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/colorAccent"
+            android:background="@color/colorsecundario"
             android:text="Fecha de nacimiento:"
             android:textSize="20sp" />
 
@@ -198,7 +198,7 @@
             android:id="@+id/tex_eps"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/colorAccent"
+            android:background="@color/colorsecundario"
             android:text="EPS:"
             android:textSize="20sp" />
 

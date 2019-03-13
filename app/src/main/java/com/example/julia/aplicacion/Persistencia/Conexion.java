@@ -31,7 +31,7 @@ public class Conexion {
         return url+"mostrar_medida.php?user="+palabra;
     }
 
-    public String mostrarrutina(String palabra){
+    public String mostrarrutina(int palabra){
         return url+"mostrar_rutina.php?user="+palabra;
     }
 

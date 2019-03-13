@@ -72,6 +72,7 @@ public class Inicio_Activity extends AppCompatActivity {
         edi_usuario.getLayoutParams().width=((ancho/5)*3);
         edi_contra.getLayoutParams().width=((ancho/5)*3);
         bt_ingresar.getLayoutParams().width=ancho/3;
+        bt_ingresar.getLayoutParams().height=alto/10;
         tex_usuario.getLayoutParams().width=((ancho/5)*3);
         tex_contra.getLayoutParams().width=((ancho/5)*3);
 

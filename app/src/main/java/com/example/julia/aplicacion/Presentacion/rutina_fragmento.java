@@ -100,14 +100,11 @@ public class rutina_fragmento extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         v = inflater.inflate(R.layout.fragment_rutina_fragmento, container, false);
         con=new Conexion();
         rutina=new ArrayList<Ejercicio>();
         iniciarpantalla();
         Glide.with(getActivity()).load("http://m.gifmania.com.mx/Gifs-Animados-Mensajes/Gif-Animadas-Iniciar/Inicio-77644.gif").into(ejercicio);
-
-
         final int a=0;
         final int c=0;
         if(b_listo.getVisibility()== View.INVISIBLE){
@@ -116,7 +113,7 @@ public class rutina_fragmento extends Fragment {
                 @Override
                 public void onClick(View v) {
                     visibilidadobjetos(false);
-                    cargarrutina(con.mostrarrutina(getArguments().getString("usuario")));
+                    cargarrutina(con.mostrarrutina(getArguments().getInt("usuario")));
                 }
             });
             b_listo.setOnClickListener(new View.OnClickListener() {
@@ -125,7 +122,7 @@ public class rutina_fragmento extends Fragment {
                         resetTimer();
                         visibilidadobjetos(true);
                         text_view_countdown.setVisibility(View.VISIBLE);
-                        text_view_countdown.setTextSize(100);
+                        text_view_countdown.setTextSize(50);
                         startTimer();
                 }
             });
@@ -143,22 +140,32 @@ public class rutina_fragmento extends Fragment {
         tv_rep=(TextView)v.findViewById(R.id.tv_rep);
         tv_edirep=(TextView)v.findViewById(R.id.tv_edrep);
         tv_ser=(TextView)v.findViewById(R.id.tv_ser);
+        tv_mus=(TextView)v.findViewById(R.id.tv_MUS);
+        tv_nom=(TextView)v.findViewById(R.id.tv_eje);
         tv_ediser=(TextView)v.findViewById(R.id.tv_ediser);
         tv_edinom=(TextView)v.findViewById(R.id.tv_edieje);
         tv_edimus=(TextView)v.findViewById(R.id.tv_edimus);
-        tv_mus=(TextView)v.findViewById(R.id.tv_MUS);
-        tv_nom=(TextView)v.findViewById(R.id.tv_eje);
         b_listo=(Button)v.findViewById(R.id.b_listo);
-        ejercicio.getLayoutParams().height=(alto/5)*3;
-        tv_edinom.getLayoutParams().width=(ancho/4);
-        tv_nom.getLayoutParams().width=(ancho/4);
-        tv_rep.getLayoutParams().width=(ancho/4);
-        tv_edirep.getLayoutParams().width=(ancho/4);
-        tv_ser.getLayoutParams().width=(ancho/4);
-        tv_ediser.getLayoutParams().width=(ancho/4);
-        tv_mus.getLayoutParams().width=(ancho/4);
-        tv_edimus.getLayoutParams().width=(ancho/4);
+        ejercicio.getLayoutParams().width=ancho;
+        tv_edinom.getLayoutParams().width=((ancho/7)*3);
+        tv_nom.getLayoutParams().width=((ancho/7)*3);
+        tv_rep.getLayoutParams().width=((ancho/7)*3);
+        tv_edirep.getLayoutParams().width=((ancho/7)*3);
+        tv_ser.getLayoutParams().width=((ancho/7)*3);
+        tv_ediser.getLayoutParams().width=((ancho/7)*3);
+        tv_mus.getLayoutParams().width=((ancho/7)*3);
+        tv_edimus.getLayoutParams().width=((ancho/7)*3);
         b_listo.getLayoutParams().width=((ancho/5)*3);
+        ejercicio.getLayoutParams().height=((alto/3)*2);
+        tv_edinom.getLayoutParams().height=(alto/12);
+        tv_nom.getLayoutParams().height=(alto/12);
+        tv_edimus.getLayoutParams().height=(alto/12);
+        tv_mus.getLayoutParams().height=(alto/12);
+        tv_ediser.getLayoutParams().height=(alto/12);
+        tv_ser.getLayoutParams().height=(alto/12);
+        tv_rep.getLayoutParams().height=(alto/12);
+        tv_edirep.getLayoutParams().height=(alto/12);
+        text_view_countdown.getLayoutParams().height=(alto/12);
     }
 
     public void visibilidadobjetos(boolean validar){
